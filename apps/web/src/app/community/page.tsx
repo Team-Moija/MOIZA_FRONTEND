@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Filter } from '../../components/community/Filter';
 import { PostDetail } from '../../components/community/PostDetail';
 import { PostType } from '../../utils/types/Post';

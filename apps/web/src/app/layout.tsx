@@ -3,6 +3,7 @@ import './globals.css';
 import localFont from 'next/font/local';
 import Header from '../components/Header';
 import { usePathname } from 'next/navigation';
+import { useAuthService } from '../utils/api/auth/useAuthService';
 
 const pretendard = localFont({
   src: "../../public/PretendardVariable.woff2",
@@ -19,7 +20,8 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
   const isHeaderVisible = !["/login"].includes(pathname);
-
+  
+  useAuthService()
   return (
     <html lang="kr" className={`${pretendard.variable}`}>
       <body className={pretendard.className}>
